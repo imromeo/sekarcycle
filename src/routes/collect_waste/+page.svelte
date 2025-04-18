@@ -1,8 +1,88 @@
 <script lang="ts">
+	import type { PageProps } from './$types';
+	// import { load } from './collect_waste';
 
+	let { data }: PageProps = $props();
 </script>
 
 <div class="bg-green-gay p-8">
-    <p class="font-bold">Collect Waste</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor elementum maximus. Nunc mattis id erat aliquet suscipit. Morbi at mauris suscipit, tempus mi at, porta augue. Nam faucibus aliquam accumsan. Fusce placerat lacus sit amet malesuada ullamcorper. Fusce non hendrerit arcu. Proin molestie, lectus vitae tempus finibus, ligula risus tempus augue, at condimentum lorem odio sit amet lectus. Suspendisse vel leo viverra turpis efficitur maximus in et nulla. In sit amet turpis lacus. Vivamus leo risus, tincidunt vel mi et, imperdiet pellentesque lorem. Fusce fermentum ante in varius accumsan.</p>
+    <div>
+        <p class="font-bold">Collect Waste</p>
+    </div>
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Type
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Amount
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Price
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        <span class="sr-only">Edit</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Apple MacBook Pro 17"
+                    </th>
+                    <td class="px-6 py-4">
+                        Silver
+                    </td>
+                    <td class="px-6 py-4">
+                        Laptop
+                    </td>
+                    <td class="px-6 py-4">
+                        $2999
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    </td>
+                </tr>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Microsoft Surface Pro
+                    </th>
+                    <td class="px-6 py-4">
+                        White
+                    </td>
+                    <td class="px-6 py-4">
+                        Laptop PC
+                    </td>
+                    <td class="px-6 py-4">
+                        $1999
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    </td>
+                </tr>
+                <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Magic Mouse 2
+                    </th>
+                    <td class="px-6 py-4">
+                        Black
+                    </td>
+                    <td class="px-6 py-4">
+                        Accessories
+                    </td>
+                    <td class="px-6 py-4">
+                        $99
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

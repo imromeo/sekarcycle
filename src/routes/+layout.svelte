@@ -8,12 +8,17 @@
 		<img class="" src="svg/logo.svg" alt="logo" />
 		<ul>
 			<li>
-				<a href="/dashboard" class="flex items-center my-8">
-					Dashboard
+				<a href="/" class="flex items-center my-8">
+					Profile
 				</a>
 			</li>
 			<li>
-				<a href="/collect_waste" class="flex items-center my-8">
+				<a href="/statistics" class="flex items-center my-8">
+					Statistics
+				</a>
+			</li>
+			<li>
+				<a href="/collect-waste" class="flex items-center my-8">
 					Collect Waste
 				</a>
 			</li>

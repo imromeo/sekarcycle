@@ -1,13 +1,13 @@
 <script>
 	import Button from '$lib/components/button.svelte';
-
-	let { nameInput } = $props();
+	
+	let { nameInput = $bindable() } = $props()
 	let typeInput = $state('');
 	let amountInput = $state(1);
     let categoryInput = $state('kg');
 </script>
 
-<div class="mb-8 rounded-2xl border-2 border-gray-200 bg-white p-4">
+<div class="rounded-2xl border-2 border-gray-200 bg-white p-4">
 	<!-- Customer input -->
 	<div class="relative mb-5" id="search-container">
 		<div class="relative flex items-center">
@@ -62,7 +62,7 @@
 			<option value="kg">kg</option>
 			<option value="g">g</option>
 			<option value="liter">liter</option>
-			<option value="buah/lembar">buah/lembar</option>
+			<option value="pcs">pcs</option>
 		</select>
 	</div>
 

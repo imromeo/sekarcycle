@@ -20,7 +20,7 @@ async function createCustomer(name: FormDataEntryValue | null) {
 
 async function fetchCustomers(name: FormDataEntryValue | null) {
 	const customerRes = await fetch(
-		'http://127.0.0.1:8090/api/collections/customer/records?perPage=100'
+		'http://127.0.0.1:8090/api/collections/customer/records?perPage=500'
 	);
 
 	if (!customerRes.ok) {
@@ -37,10 +37,15 @@ async function fetchCustomers(name: FormDataEntryValue | null) {
 export const actions = {
 	createTransaction: async (event) => {
 		const formData = await event.request.formData();
-		const name = formData.get('name').toLowerCase().trim();
-		const type = formData.get('type').toLowerCase().trim();
-		const amount = formData.get('amount');
-		const unit = formData.get('unit');
+		const name = formData.get('name')?.toLowerCase().trim();
+		const type = formData.get('type')?.toLowerCase().trim();
+		let amount = formData.get('amount');
+		let unit = formData.get('unit');
+
+		if (unit === 'g') {
+			amount = amount / 1000;
+			unit = 'kg';
+		}
 
 		let customer = await fetchCustomers(name);
 		if (!customer) {
@@ -57,7 +62,8 @@ export const actions = {
 					customer: customer.id,
 					trash_type: type,
 					trash_amount: amount,
-					field: unit
+					unit: unit,
+					created: new Date()
 				})
 			}
 		);

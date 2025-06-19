@@ -1,16 +1,16 @@
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch }) => {
-	const [transactionRes, customerRes] = await Promise.all([
-		fetch('http://127.0.0.1:8090/api/collections/transaction/records?sort=-created'),
-		fetch('http://127.0.0.1:8090/api/collections/customer/records?perPage=100')
-	]);
-	const transactions = await transactionRes.json();
-	const customers = await customerRes.json();
+	const now = new Date();
+	const firstDay = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-01`;
+	const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+	const lastDayFormatted = firstDay.slice(0, 8) + String(lastDay).padStart(2, '0');
 
-	// // If need logging
-	// console.log(transactions.items);
-	// console.log(customers.items[0].name);
+	const response = await fetch(
+		`http://127.0.0.1:8090/api/collections/transaction/records?filter=${encodeURIComponent(
+			`(created>='${firstDay}' && created<='${lastDayFormatted}')`
+		)}&expand=customer&sort=-created&perPage=500`
+	);
 
-	return { transactions, customers };
+	return { transactions: await response.json() };
 };

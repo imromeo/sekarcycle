@@ -2,7 +2,8 @@
 @import 'tailwindcss';
 
 @theme {
-	--color-green-gay: #003310;
+	--color-secondary: #032313;
+	--color-primary: #FFD500;
 }
 
 html {

@@ -1,8 +1,5 @@
-<script lang="ts">
-</script>
-
 <button
-	class="rounded-lg bg-[#FFD500] px-5 py-2.5 text-center text-sm font-medium text-black hover:bg-gray-300 focus:bg-gray-300 focus:outline-none"
+	class="bg-secondary hover:bg-primary rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white hover:text-black"
 >
 	<slot />
 </button>

@@ -1,5 +1,6 @@
 import type { PageLoad } from './$types';
 import type { Transaction } from '$lib/models/TransactionModel';
+import { PUBLIC_PB_URL } from '$env/static/public';
 
 export const load: PageLoad = async ({ fetch, params }) => {
 	const currentYear = params.statisticsYear;
@@ -12,7 +13,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
 
 		try {
 			const response = await fetch(
-				`http://127.0.0.1:8090/api/collections/transaction/records?filter=${encodeURIComponent(
+				`http://${PUBLIC_PB_URL}/api/collections/transaction/records?filter=${encodeURIComponent(
 					`(created>='${monthStartDate}' && created<='${formattedMonthEndDate}')`
 				)}&sort=created&expand=customer&perPage=500`
 			);

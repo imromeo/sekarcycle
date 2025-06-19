@@ -1,3 +1,4 @@
+import { PUBLIC_PB_URL } from '$env/static/public';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch }) => {
@@ -10,7 +11,7 @@ export const load: PageLoad = async ({ fetch }) => {
 
 		const yearFilter = `(created>='${yearStartDate}' && created<='${yearEndDate}')`;
 		const yearFilterEncoded = encodeURIComponent(yearFilter);
-		const url = `http://127.0.0.1:8090/api/collections/transaction/records?filter=${yearFilterEncoded}`;
+		const url = `http://${PUBLIC_PB_URL}/api/collections/transaction/records?filter=${yearFilterEncoded}`;
 
 		try {
 			const response = await fetch(url);

@@ -1,3 +1,4 @@
+import { PUBLIC_PB_URL } from '$env/static/public';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch }) => {
@@ -7,7 +8,7 @@ export const load: PageLoad = async ({ fetch }) => {
 	const lastDayFormatted = firstDay.slice(0, 8) + String(lastDay).padStart(2, '0');
 
 	const response = await fetch(
-		`http://127.0.0.1:8090/api/collections/transaction/records?filter=${encodeURIComponent(
+		`http://${PUBLIC_PB_URL}/api/collections/transaction/records?filter=${encodeURIComponent(
 			`(created>='${firstDay}' && created<='${lastDayFormatted}')`
 		)}&expand=customer&sort=-created&perPage=500`
 	);

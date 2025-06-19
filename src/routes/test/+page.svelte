@@ -1,7 +1,7 @@
 <script>
-    let { data } = $props();
+	let { data } = $props();
 	let query = $state('');
-	let activeIndex = $state(-1); 
+	let activeIndex = $state(-1);
 
 	const dataq = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape', 'Honeydew'];
 

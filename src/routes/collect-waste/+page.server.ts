@@ -1,7 +1,8 @@
+import { PUBLIC_PB_URL } from '$env/static/public';
 import type { Actions } from './$types';
 
 async function createCustomer(name: FormDataEntryValue | null) {
-	const response = await fetch('http://127.0.0.1:8090/api/collections/customer/records', {
+	const response = await fetch(`http://${PUBLIC_PB_URL}/api/collections/customer/records`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({
@@ -20,7 +21,7 @@ async function createCustomer(name: FormDataEntryValue | null) {
 
 async function fetchCustomers(name: FormDataEntryValue | null) {
 	const customerRes = await fetch(
-		'http://127.0.0.1:8090/api/collections/customer/records?perPage=500'
+		`http://${PUBLIC_PB_URL}/api/collections/customer/records?perPage=500`
 	);
 
 	if (!customerRes.ok) {
@@ -54,7 +55,7 @@ export const actions = {
 
 		// Possible update: this fetch should also be a function
 		const transactionRes = await fetch(
-			'http://127.0.0.1:8090/api/collections/transaction/records',
+			`http://${PUBLIC_PB_URL}/api/collections/transaction/records`,
 			{
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },

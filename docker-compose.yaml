@@ -1,0 +1,11 @@
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PUBLIC_PB_URL=${PUBLIC_PB_URL}
+    ports:
+      - 9000:3000
+    restart: unless-stopped

@@ -10,7 +10,7 @@
 
 		<div class={`flex-1 rounded-2xl border-2 border-gray-200 p-4`}>
 			<p>
-				Profil Singkat Bank Sampah Sekar Bank Sampah Sekar merupakan lembaga berbasis komunitas yang
+				Bank Sampah Sekar merupakan lembaga berbasis komunitas yang
 				berlokasi di RT 18, Kelurahan Gunung Bahagia, Kota Balikpapan. Didirikan sebagai bentuk
 				kepedulian terhadap isu lingkungan, Bank Sampah Sekar bertujuan untuk mendorong pengelolaan
 				sampah yang lebih bijak dan berkelanjutan melalui partisipasi aktif warga. Dalam

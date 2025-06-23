@@ -15,7 +15,8 @@ async function createCustomer(name: FormDataEntryValue | null) {
 	}
 
 	const customerData = await response.json();
-	console.log(customerData);
+	//  Logging
+	// console.log(customerData);
 	return customerData;
 }
 
